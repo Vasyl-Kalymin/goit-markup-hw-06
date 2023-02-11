@@ -434,6 +434,10 @@ ul {
     letter-spacing: 0.02em;
 }
 
+.social-container{
+    margin-right: 80px;
+}
+
 .footer-media-text{
     margin-bottom: 16px;
     color: var(--white-color);
@@ -454,6 +458,31 @@ ul {
 .footer-link:hover,
 .footer-link:focus{
     background-color: var(--success-color);
+}
+
+.subscrible-form-field{
+    display: flex;
+}
+
+.sub-container{
+    margin-right: 24px;
+}
+.input-subscrible{
+    background-color: transparent;
+    width: 264px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+border-radius: 4px;
+}
+
+.btn-subscrible{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 165px;
+    height: 40px;
+    margin-top: 40px;
 }
 
 /*Стилізація Портфоліо*/
