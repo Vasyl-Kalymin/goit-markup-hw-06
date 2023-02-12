@@ -777,9 +777,19 @@ ul {
     transition-property: border-color;
 }
 
-.send-form-field:focus{
+.send-form-field:focus,
+.send-form-field:not(:placeholder-shown){
     border-color: var(--primary-brand-color);
     outline: none;
+}
+
+.send-form-field::placeholder{
+    opacity: 0;
+    
+}
+
+.send-form-field:focus::placeholder{
+    opacity: 1;
 }
 
 .send-form-icon{
