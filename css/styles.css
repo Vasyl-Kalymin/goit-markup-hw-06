@@ -19,6 +19,7 @@
     --hero-background-color: #2e2f42;
     --white-color: #ffffff;
     --black-color: #000000;
+    --grey-color: #757575;
     /*інші*/
     --indent: 24px;
     --items: 4;
@@ -238,7 +239,7 @@ ul {
     text-align: center;
 }
 
-.hero-btn{
+.btn{
     display: block;
     width: 169px;
     height: 56px;
@@ -260,14 +261,14 @@ ul {
     transition-property: box-shadow;
 }
 
-.hero-btn:hover,
-.hero-btn:focus{
+.btn:hover,
+.btn:focus{
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-.hero-btn:active{
+.btn:active{
     background: var(--pressed-state-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
@@ -346,8 +347,8 @@ ul {
 
 .social-list{
     display: flex;
-    gap: var(--indent);
     justify-content: center;
+    justify-content: space-between
 }
 
 .social-link{
@@ -435,7 +436,8 @@ ul {
 }
 
 .social-container{
-    margin-right: 80px;
+    width: 208px;
+    margin-right: auto;
 }
 
 .footer-media-text{
@@ -460,6 +462,7 @@ ul {
     background-color: var(--success-color);
 }
 
+/*форма Subscrible в футері*/
 .subscrible-form-field{
     display: flex;
 }
@@ -468,12 +471,42 @@ ul {
     margin-right: 24px;
 }
 .input-subscrible{
-    background-color: transparent;
     width: 264px;
     height: 40px;
+    padding: 0;
+    padding-left: 16px;
     border: 1px solid rgba(255, 255, 255, 0.3);
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-border-radius: 4px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--white-color);
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+    transition-property: opacity, border-color;
+}
+
+.input-subscrible:focus,
+.input-subscrible:not(:placeholder-shown)
+{
+    border-color: var(--white-color);
+    outline: none;
+}
+
+.input-subscrible::placeholder{
+    opacity: 0;
+    
+}
+
+.input-subscrible:focus::placeholder{
+    opacity: 1;
+}
+
+.btn-text{
+    margin-right: 16px;
 }
 
 .btn-subscrible{
@@ -483,6 +516,33 @@ border-radius: 4px;
     width: 165px;
     height: 40px;
     margin-top: 40px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-brand-color);
+    color: var(--white-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+
+    transition-property: box-shadow;
+}
+
+.btn-subscrible:hover,
+.btn-subscrible:focus
+{
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.btn-subscrible:active{
+    background-color: var(--pressed-state-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.subscrible-icon{
+    fill: currentColor;
 }
 
 /*Стилізація Портфоліо*/
@@ -627,7 +687,8 @@ border-radius: 4px;
     top: 50%;
     left: 50%;
     width: 408px;
-    height: 576px;
+    height: 584px;
+    padding: 24px;
     border-radius: 4px;
     background-color: var(--modal-color);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 
@@ -673,4 +734,144 @@ border-radius: 4px;
 
 .close-icon{
     fill: currentColor;
+}
+
+.modal-title{
+    display: block;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    color: var(--hero-background-color);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+/*Форма в модалці*/
+.send-form-lable{
+    display: block;
+    margin-bottom: 4px;
+    color: var(--subtle-text-color);
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+}
+
+.send-form-group{
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.send-form-field{
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 8px 38px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--black-color);
+    font-size: 18px;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+    transition-property: border-color;
+}
+
+.send-form-field:focus{
+    border-color: var(--primary-brand-color);
+    outline: none;
+}
+
+.send-form-icon{
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    pointer-events: none;
+    fill: var(--hero-background-color);
+
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+    transition-property: fill;
+    transform: translateY(-50%);/*це для того щоб забрати клікабельність з іконок*/
+}
+
+.send-form-field:focus + .send-form-icon{
+    fill: var(--primary-brand-color);
+}
+
+.send-form-comment{
+    display: block;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+    resize: none;
+
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+    transition-property: border-color;
+}
+
+.send-form-comment::placeholder{
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.send-form-comment:focus{
+    border-color: var(--primary-brand-color);
+    outline: none;
+}
+
+.send-form-agreement{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.checkbox-wrapper{
+    position: relative;
+}
+
+.checkbox-icon{
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    fill: var(--modal-color);
+}
+
+.send-form-checkbox{
+    width: 16px;
+    height: 16px;
+    border: 1.25px solid #2E2F42;
+    border-radius: 2px;
+
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+    transition-property: border-color, background-color;
+    appearance: none;/*скинути стандартне оформлення чекбоксу*/
+}
+
+.send-form-checkbox:checked{
+    border-color: var(--pressed-state-color);
+    background-color: var(--pressed-state-color);
+}
+
+.send-form-desc{
+    color: var(--grey-color);
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+    user-select: none;/*заборонити виділення тексту*/
+    
+}
+
+.send-form-link{
+    color: var(--primary-brand-color);
 }

@@ -64,7 +64,7 @@
       <section class="hero">
         <div class="hero-container container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button class="hero-btn" data-modal-open type="button">
+          <button class="btn" data-modal-open type="button">
             Order Service
           </button>
         </div>
@@ -572,9 +572,9 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-              <svg class="social-icon" width="24" height="24">
-                    <use href="./images/icons.svg#icon-linkedin"></use>
-                  </svg>
+                <svg class="social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-linkedin"></use>
+                </svg>
               </a>
             </li>
           </ul>
@@ -584,11 +584,16 @@
             <label class="subscrible-form-field">
               <div class="sub-container">
                 <p class="footer-media-text">Subscribe</p>
-                <input class="input-subscrible" name="input_email" type="email" />
+                <input
+                  class="input-subscrible"
+                  name="input_email"
+                  type="email"
+                  placeholder="E-mail"
+                />
               </div>
               <div>
                 <button class="btn-subscrible" type="submit">
-                  Subscribe
+                  <span class="btn-text">Subscribe</span>
                   <svg class="subscrible-icon" width="24" height="24">
                     <use href="./images/icons.svg#icon-send"></use>
                   </svg>
@@ -607,8 +612,81 @@
             <use href="./images/icons.svg#close-icon"></use>
           </svg>
         </button>
+        <strong class="modal-title">
+          Leave your contacts and we will call you back
+        </strong>
+        <form class="send-form" id="send-form">
+          <label class="send-form-lable" for="user_name">Name</label>
+          <div class="send-form-group">
+            <input
+              class="send-form-field"
+              id="user_name"
+              name="user_name"
+              type="text"
+            />
+            <svg class="send-form-icon" width="18" height="18">
+              <use href="./images/icons.svg#icon-person"></use>
+            </svg>
+          </div>
+          <label class="send-form-lable" for="user_tell">Phone</label>
+          <div class="send-form-group">
+            <input
+              class="send-form-field"
+              id="user_tell"
+              name="user_tell"
+              type="tell"
+            />
+            <svg class="send-form-icon" width="18" height="24">
+              <use href="./images/icons.svg#icon-phone"></use>
+            </svg>
+          </div>
+          <label class="send-form-lable" for="user_email">Email</label>
+          <div class="send-form-group">
+            <input
+              class="send-form-field"
+              id="user_email"
+              name="user_email"
+              type="email"
+            />
+            <svg class="send-form-icon" width="18" height="24">
+              <use href="./images/icons.svg#icon-email"></use>
+            </svg>
+          </div>
+          <label class="send-form-lable" for="user_comment">Comment</label>
+          <textarea
+            class="send-form-comment"
+            id="user_comment"
+            name="user_comment"
+            cols="42"
+            rows="6"
+            placeholder="Text input"
+          ></textarea>
+          <label class="send-form-agreement">
+            <div class="checkbox-wrapper">
+              <input
+                class="send-form-checkbox"
+                name="privacy-policy"
+                type="checkbox"
+              />
+              <span>
+                <svg class="checkbox-icon" width="10" height="8">
+                  <use href="./images/icons.svg#icon-vector"></use>
+                </svg>
+              </span>
+            </div>
+            <span class="send-form-desc"
+              >I accept the terms and conditions of the
+              <a class="send-form-link" href>Privacy Policy</a>
+            </span>
+          </label>
+          <button class="btn" type="submit">Send</button>
+        </form>
       </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.7/dist/jquery.inputmask.min.js"></script>
+    <script src="./js/phone-mask.js"></script>
     <script src="./js/modal.js"></script>
   </body>
 </html>
